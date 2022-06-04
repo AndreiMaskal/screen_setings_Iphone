@@ -11,7 +11,7 @@ struct Cell {
     var title: String?
     var detail: String?
     var isToggle: Bool?
-    var image: UIImage?
+    var image: String?
 }
 
 class CellData {
@@ -19,41 +19,39 @@ class CellData {
     static func getData() -> [[Cell]] {
         let sectionOne = [Cell(title: "Авиарежим",
                                isToggle: true,
-                               image: UIImage(named: "airplane")),
+                               image: "airplane2"),
                           Cell(title: "Wi-Fi",
                                detail: "Не подключено",
-                               image: UIImage(named: "WiFi")),
+                               image: "WiFi"),
                           Cell(title: "Bluetooth",
                                detail: "Вкл.",
-                               image: UIImage(named: "bluetooth")),
+                               image:  "bluetooth"),
                           Cell(title: "Сотовая связь",
-                               image: UIImage(named: "antena")),
+                               image: "antena"),
                           Cell(title: "Режим модема",
-                               image: UIImage(named: "connect")),
+                               image:  "connect"),
                           Cell(title: "VPN",
                                isToggle: true,
-                               image: UIImage(named: "VPN"))]
+                               image: "VPN")]
         
         let sectionTwo = [Cell(title: "Уведомления",
-                               image: UIImage(named: "sqare")),
+                               image: "sqare"),
                           Cell(title: "Звуки, тактильные сигналы",
-                               image: UIImage(named: "volume")),
+                               image: "volume"),
                           Cell(title: "Не беспокоить",
-                               image: UIImage(named: "sleep")),
+                               image: "sleep"),
                           Cell(title: "Экранное время",
-                               image: UIImage(named: "time"))]
+                               image: "time")]
 
         let sectionThree = [Cell(title: "Основные",
-                                 image: UIImage(named: "setings")),
+                                 image: "setings"),
                             Cell(title: "Пункт управления",
-                                 image: UIImage(named: "were")),
+                                 image: "were"),
                             Cell(title: "Экран и яркость",
-                                 image: UIImage(named: "AAA")),
+                                 image: "AAA"),
                             Cell(title: "Экран \"Домой\"",
-                                 image: UIImage(named: "color"))]
+                                 image: "color")]
 
         return [sectionOne, sectionTwo, sectionThree]
     }
 }
-
-var allCellData = CellData.getData()

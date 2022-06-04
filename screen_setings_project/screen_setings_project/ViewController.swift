@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    var allCellData = CellData.getData()
+    
     private lazy var tableView: UITableView = {
         
         let table = UITableView(frame: view.bounds, style: .grouped)
@@ -26,9 +29,7 @@ class ViewController: UIViewController {
         setupLayout()
        
     }
-       
     
-
     // MARK: - Settings
     private func setupView() {
         
@@ -39,10 +40,12 @@ class ViewController: UIViewController {
     private func setupHierarchy() {
         
         view.addSubview(tableView)
+    
+    
     }
     
     private func setupLayout() {
-        
+
         tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
@@ -55,7 +58,6 @@ extension ViewController: UITableViewDataSource  {
         return allCellData[section].count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? SubtitleCell else {
@@ -67,7 +69,6 @@ extension ViewController: UITableViewDataSource  {
     }
 }
 
-
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -77,35 +78,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-class SubtitleCell: UITableViewCell {
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView?.image = nil
-        textLabel?.text = nil
-        detailTextLabel?.text = nil
-    }
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupCell(data: Cell) {
-        accessoryType = .disclosureIndicator
-        imageView?.image = data.image
-        textLabel?.text = data.title
-        detailTextLabel?.text = data.detail
-        imageView?.clipsToBounds = true
-        imageView?.layer.cornerRadius = 12
-        
-        let mySwitch = UISwitch(frame: .zero)
-        
-        if data.isToggle != nil {
-            accessoryView = mySwitch
-        }
-    }
-}
+
+
 
 
