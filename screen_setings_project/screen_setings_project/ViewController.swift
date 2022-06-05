@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     private lazy var tableView: UITableView = {
         
         let table = UITableView(frame: view.bounds, style: .grouped)
+        table.rowHeight = 50
         table.dataSource = self
         table.delegate = self
         return table
@@ -40,8 +41,6 @@ class ViewController: UIViewController {
     private func setupHierarchy() {
         
         view.addSubview(tableView)
-    
-    
     }
     
     private func setupLayout() {
