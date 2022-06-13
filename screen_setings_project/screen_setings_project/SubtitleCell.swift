@@ -39,7 +39,8 @@ class SubtitleCell: UITableViewCell {
         detailTextLabel?.text = nil
     }
 
-    func setupCell(data: Cell) {
+    func setupCell(data: SettingsModel.Cell) {
+        
         accessoryType = .disclosureIndicator
         
         titleCellLabel.text = data.title

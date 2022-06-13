@@ -1,5 +1,5 @@
 //
-//  CellStruct.swift
+//  SettingsModel.swift
 //  screen_setings_project
 //
 //  Created by Andrei Maskal on 30/05/2022.
@@ -7,16 +7,17 @@
 
 import UIKit
 
-struct Cell {
-    var title: String?
-    var detail: String?
-    var isToggle: Bool?
-    var image: String?
-}
-
-class CellData {
+class SettingsModel {
     
-    static func getData() -> [[Cell]] {
+    struct Cell {
+        var title: String?
+        var detail: String?
+        var isToggle: Bool?
+        var image: String?
+    }
+    
+    static func getData() -> [[SettingsModel.Cell]] {
+        
         let sectionOne = [Cell(title: "Авиарежим",
                                isToggle: true,
                                image: "airplane2"),
