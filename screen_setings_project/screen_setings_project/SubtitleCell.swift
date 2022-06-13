@@ -39,7 +39,7 @@ class SubtitleCell: UITableViewCell {
         detailTextLabel?.text = nil
     }
 
-    func setupCell(data: CellData.Cell) {
+    func setupCell(data: SettingsModel.Cell) {
         
         accessoryType = .disclosureIndicator
         
