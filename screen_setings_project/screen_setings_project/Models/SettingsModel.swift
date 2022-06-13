@@ -7,16 +7,17 @@
 
 import UIKit
 
-struct Cell {
-    var title: String?
-    var detail: String?
-    var isToggle: Bool?
-    var image: String?
-}
-
 class CellData {
     
-    static func getData() -> [[Cell]] {
+    struct Cell {
+        var title: String?
+        var detail: String?
+        var isToggle: Bool?
+        var image: String?
+    }
+    
+    static func getData() -> [[CellData.Cell]] {
+        
         let sectionOne = [Cell(title: "Авиарежим",
                                isToggle: true,
                                image: "airplane2"),
