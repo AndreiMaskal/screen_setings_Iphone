@@ -7,50 +7,47 @@
 
 import UIKit
 
-class SettingsModel {
-    
-    struct Cell {
+struct SettingsModel {
         var title: String?
         var detail: String?
         var isToggle: Bool?
         var image: String?
-    }
     
-    static func getData() -> [[SettingsModel.Cell]] {
+    static func getData() -> [[SettingsModel]] {
         
-        let sectionOne = [Cell(title: "Авиарежим",
+        let sectionOne = [SettingsModel(title: "Авиарежим",
                                isToggle: true,
                                image: "airplane2"),
-                          Cell(title: "Wi-Fi",
+                          SettingsModel(title: "Wi-Fi",
                                detail: "Не подключено",
                                image: "WiFi"),
-                          Cell(title: "Bluetooth",
+                          SettingsModel(title: "Bluetooth",
                                detail: "Вкл.",
                                image:  "bluetooth"),
-                          Cell(title: "Сотовая связь",
+                          SettingsModel(title: "Сотовая связь",
                                image: "antena"),
-                          Cell(title: "Режим модема",
+                          SettingsModel(title: "Режим модема",
                                image:  "connect"),
-                          Cell(title: "VPN",
+                          SettingsModel(title: "VPN",
                                isToggle: true,
                                image: "VPN")]
         
-        let sectionTwo = [Cell(title: "Уведомления",
+        let sectionTwo = [SettingsModel(title: "Уведомления",
                                image: "sqare"),
-                          Cell(title: "Звуки, тактильные сигналы",
+                          SettingsModel(title: "Звуки, тактильные сигналы",
                                image: "volume"),
-                          Cell(title: "Не беспокоить",
+                          SettingsModel(title: "Не беспокоить",
                                image: "sleep"),
-                          Cell(title: "Экранное время",
+                          SettingsModel(title: "Экранное время",
                                image: "time")]
 
-        let sectionThree = [Cell(title: "Основные",
+        let sectionThree = [SettingsModel(title: "Основные",
                                  image: "setings"),
-                            Cell(title: "Пункт управления",
+                            SettingsModel(title: "Пункт управления",
                                  image: "were"),
-                            Cell(title: "Экран и яркость",
+                            SettingsModel(title: "Экран и яркость",
                                  image: "AAA"),
-                            Cell(title: "Экран \"Домой\"",
+                            SettingsModel(title: "Экран \"Домой\"",
                                  image: "color")]
 
         return [sectionOne, sectionTwo, sectionThree]

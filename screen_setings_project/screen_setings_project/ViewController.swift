@@ -9,9 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     var allCellData = SettingsModel.getData()
-    
+
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: view.bounds, style: .grouped)
         table.rowHeight = 50
