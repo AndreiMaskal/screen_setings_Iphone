@@ -61,7 +61,8 @@ extension ViewController: UITableViewDataSource  {
             return UITableViewCell()
         }
         let dataForCell = allCellData[indexPath.section][indexPath.row]
-        cell.setupCell(data: dataForCell)
+        let image = UIImage(named: dataForCell.image ?? "")
+        cell.setupCell(image: image, title: dataForCell.title, detailText: dataForCell.detail ?? "", isSwitch: dataForCell.isToggle ?? false)
         return cell
     }
 }
@@ -69,13 +70,8 @@ extension ViewController: UITableViewDataSource  {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let title = allCellData[indexPath.section][indexPath.row].title ?? "nil"
+        let title = allCellData[indexPath.section][indexPath.row].title 
         print("Нажата ячейка \(title)")
         
     }
 }
-
-
-
-
-

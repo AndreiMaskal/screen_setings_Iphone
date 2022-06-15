@@ -37,21 +37,19 @@ class SubtitleCell: UITableViewCell {
         imageView?.image = nil
         textLabel?.text = nil
         detailTextLabel?.text = nil
+        accessoryView = nil
     }
 
-    func setupCell(data: SettingsModel) {
+    func setupCell(image: UIImage?, title: String, detailText: String, isSwitch: Bool) {
         
         accessoryType = .disclosureIndicator
-        
-        titleCellLabel.text = data.title
-        
-        let image = UIImage(named: data.image ?? "")
+        titleCellLabel.text = title
         imageCellView.image = image
+        detailTextLabel?.text = detailText
         
-        detailTextLabel?.text = data.detail
-        
-        let mySwitch = UISwitch(frame: .zero)
-        if data.isToggle != nil {
+        if isSwitch {
+            let mySwitch = UISwitch(frame: .zero)
+
             accessoryView = mySwitch
         }
     }
@@ -64,7 +62,6 @@ private extension SubtitleCell {
         addSubview(imageCellView)
         addSubview(titleCellLabel)
         
-        
         imageCellView.translatesAutoresizingMaskIntoConstraints = false
 
         imageCellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
@@ -72,7 +69,6 @@ private extension SubtitleCell {
         imageCellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         let imageCellViewWidth = (bounds.height - 5)
         imageCellView.widthAnchor.constraint(equalToConstant: imageCellViewWidth).isActive = true
-        
         
         titleCellLabel.translatesAutoresizingMaskIntoConstraints = false
     

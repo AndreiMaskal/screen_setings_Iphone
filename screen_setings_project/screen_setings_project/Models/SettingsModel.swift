@@ -5,10 +5,10 @@
 //  Created by Andrei Maskal on 30/05/2022.
 //
 
-import UIKit
+import Foundation
 
 struct SettingsModel {
-        var title: String?
+        var title: String
         var detail: String?
         var isToggle: Bool?
         var image: String?
