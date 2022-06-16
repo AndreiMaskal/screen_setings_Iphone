@@ -7,47 +7,49 @@
 
 import Foundation
 
-struct SettingsModel {
+struct Model {
         var title: String
         var detail: String?
         var isToggle: Bool?
         var image: String?
+}
     
-    static func getData() -> [[SettingsModel]] {
+struct SettingsModel {
+    static func getData() -> [[Model]] {
         
-        let sectionOne = [SettingsModel(title: "Авиарежим",
+        let sectionOne = [Model(title: "Авиарежим",
                                isToggle: true,
                                image: "airplane2"),
-                          SettingsModel(title: "Wi-Fi",
+                          Model(title: "Wi-Fi",
                                detail: "Не подключено",
                                image: "WiFi"),
-                          SettingsModel(title: "Bluetooth",
+                          Model(title: "Bluetooth",
                                detail: "Вкл.",
                                image:  "bluetooth"),
-                          SettingsModel(title: "Сотовая связь",
+                          Model(title: "Сотовая связь",
                                image: "antena"),
-                          SettingsModel(title: "Режим модема",
+                          Model(title: "Режим модема",
                                image:  "connect"),
-                          SettingsModel(title: "VPN",
+                          Model(title: "VPN",
                                isToggle: true,
                                image: "VPN")]
         
-        let sectionTwo = [SettingsModel(title: "Уведомления",
+        let sectionTwo = [Model(title: "Уведомления",
                                image: "sqare"),
-                          SettingsModel(title: "Звуки, тактильные сигналы",
+                          Model(title: "Звуки, тактильные сигналы",
                                image: "volume"),
-                          SettingsModel(title: "Не беспокоить",
+                          Model(title: "Не беспокоить",
                                image: "sleep"),
-                          SettingsModel(title: "Экранное время",
+                          Model(title: "Экранное время",
                                image: "time")]
 
-        let sectionThree = [SettingsModel(title: "Основные",
+        let sectionThree = [Model(title: "Основные",
                                  image: "setings"),
-                            SettingsModel(title: "Пункт управления",
+                            Model(title: "Пункт управления",
                                  image: "were"),
-                            SettingsModel(title: "Экран и яркость",
+                            Model(title: "Экран и яркость",
                                  image: "AAA"),
-                            SettingsModel(title: "Экран \"Домой\"",
+                            Model(title: "Экран \"Домой\"",
                                  image: "color")]
 
         return [sectionOne, sectionTwo, sectionThree]

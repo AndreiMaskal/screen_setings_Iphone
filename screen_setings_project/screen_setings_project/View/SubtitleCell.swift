@@ -9,6 +9,8 @@ import UIKit
 
 class SubtitleCell: UITableViewCell {
     
+    static let tableCellID = "cell"
+    
     private lazy var imageCellView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

@@ -10,40 +10,17 @@ import UIKit
 class ViewController: UIViewController {
     
     var allCellData = SettingsModel.getData()
-
-    private lazy var tableView: UITableView = {
-        let table = UITableView(frame: view.bounds, style: .grouped)
-        table.rowHeight = 50
-        table.dataSource = self
-        table.delegate = self
-        return table
-    }()
+    
+    private var settingsView: TableView? {
+        guard isViewLoaded else { return nil }
+        return view as? TableView
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupView()
-        setupHierarchy()
-        setupLayout()
-       
-    }
-    
-    // MARK: - Settings
-    private func setupView() {
-        
-        title = "Настройки"
-        tableView.register(SubtitleCell.self, forCellReuseIdentifier: "cell")
-    }
-    
-    private func setupHierarchy() {
-        
-        view.addSubview(tableView)
-    }
-    
-    private func setupLayout() {
-
-        tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        view = TableView()
+        configureView()
     }
 }
 
@@ -73,5 +50,14 @@ extension ViewController: UITableViewDelegate {
         let title = allCellData[indexPath.section][indexPath.row].title 
         print("Нажата ячейка \(title)")
         
+    }
+}
+
+private extension ViewController {
+    func configureView() {
+        settingsView?.tableView.dataSource = self
+        settingsView?.tableView.delegate = self
+        settingsView?.setupLayout()
+        settingsView?.setupHierarchy()
     }
 }
